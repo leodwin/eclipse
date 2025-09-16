@@ -1,0 +1,20 @@
+id: oracleidentitycloudservice/libinlivero@yahoo.com
+tenency /compartment id: ocid1.tenancy.oc1..aaaaaaaax4ekvlkcwn4mexyuhpelrcmvluma3bq5bry4pesv443nngryzzea
+
+OCID: ocid1.tenancy.oc1..aaaaaaaax4ekvlkcwn4mexyuhpelrcmvluma3bq5bry4pesv443nngryzzea
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaajdtipzym5ajalk4fu53ytwl4bavfytt6e5cmqmpvkbf3rnk6rp6q
+fingerprint=ff:ae:52:70:b9:47:2c:31:c6:dc:ed:d5:8b:ae:da:8f
+tenancy=ocid1.tenancy.oc1..aaaaaaaax4ekvlkcwn4mexyuhpelrcmvluma3bq5bry4pesv443nngryzzea
+region=ap-hyderabad-1
+key_file=<path to your private keyfile> # TODO
+
+token:  4B:3}ih3uzy[v.8OgJbg
+
+storagenamespace: axbdvj9lgy73
+
+/drives/d/GIT_PUBLIC/DevOPS_training/DevOpsDay 1 
+ssh -i ssh-key-2021-08-09.key opc@152.67.172.74
+
+test - 10.10.0.101
+Server - 10.10.0.100

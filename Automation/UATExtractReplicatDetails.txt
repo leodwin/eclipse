@@ -1,0 +1,26 @@
+GCCA -- resync
+
+GG 12c(umodx4081.us.oracle.com)
+------
+EPORTAL
+ESURE
+
+GG 12c(umodx4081.us.oracle.com)
+------
+RCMS
+RMOS_CC
+RNGCCR
+RODS_MOS
+RPORTAL
+RSURE
+
+GG 11g(umodx4081.us.oracle.com)
+----------------
+ECMS
+EMOS_CC
+ENGCCR
+EODS_MOS
+
+gg12c(umodx4089.us.oracle.com)
+ebug 
+rbug

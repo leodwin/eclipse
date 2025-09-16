@@ -1,0 +1,130 @@
+#--------------
+# UAT
+#--------------
+   wd2394|umodx4081|umodx4089)
+
+                case ${machine} in
+                   "wd2394")       export ORACLE_HOME="/u01/app/oracle/client/12101";
+                                   export OGG_HOME="/app/ggate";
+                                   ;;
+                   "umodx4081")    export ORACLE_HOME="/u01/app/oracle/product/12.1.0.2/dbhome_1";
+                                   export ORACLE_HOME_11="/u01/app/oracle/product/11.2.0.4/dbhome_1";
+                                   export ORACLE_HOME_12="/u01/app/oracle/product/12.1.0.2/dbhome_1";
+                                   export OGG_HOME="/u01/app/oracle/product/ggate";
+                                   export OGG_HOME_11="/u01/app/oracle/product/ggate_11db";
+                                   export OGG_HOME_12="/u01/app/oracle/product/ggate";
+                                   ;;
+                   "umodx4089")    export ORACLE_HOME="/u01/app/oracle/product/12.2.0.1/dbhome_1";
+                                   export OGG_HOME="/u01/app/oracle/product/ggate122";
+                                   ;;
+                esac
+export TNS_ADMIN="/u01/app/12.1.0.2/grid/network/admin";
+                export TNS_ADMIN_SED="\/u01\/app\/12.1.0.2\/grid\/network\/admin";
+                export ENVIRONMENT="uat";
+                export EMAIL_LIST="${UAT_EMAIL_LIST}";
+                export NUM_LOGS_TO_KEEP=10;
+
+                export TARGET_SCHEMA="ggate";
+                export TARGET_PASSWORD="J3lLy4FISh";
+                export TARGET_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAKAABWIZETGIFXAXDWAXBGICFIIHHIAFAEBZFWGKIPADIQDWAOAEGQCJATFRDIEJJPF";
+                export TARGET_SID="GGATE01_ODMCT";
+
+                export ODS_SCHEMA="ods_user";
+                export ODS_PASSWORD="Ou2011!!";
+
+                case ${PROJECT_NAME} in
+                   "bug")
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="Gg4t3";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAFARAOJQAMCFBWDDJYEQIXHMGRBBAACQISAJACFOCABRFCDMCHBJCCAYGEJUCWEMIKH";
+export SOURCE_SID="GGATE01_BUGAU";
+                              export SOURCE_THREADS="2";
+                              export DB_UNIQUE_NAME="bugau_ucx";
+
+                              export REPLICAT_SCHEMA="bug";
+                              export REPLICAT_PASSWORD="GG12bugu";
+                              export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                   "cms")
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="Gg4t3";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAFARAOJQAMCFBWDDJYEQIXHMGRBBAACQISAJACFOCABRFCDMCHBJCCAYGEJUCWEMIKH";
+                              export SOURCE_SID="GGATE01_ORNCT";
+                              export SOURCE_THREADS="3";
+                              export DB_UNIQUE_NAME="ornct_ucx";
+
+                              export REPLICAT_SCHEMA="cms";
+                              export REPLICAT_PASSWORD="cms";
+export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                   "gcca")
+                              export EXTRACT_SCHEMA="adminccastg";
+                              export EXTRACT_SCHEMA2="gccaordstg";
+
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="welcome2";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAIATBQFVAYBWALALGYFQFTCJEEFOIJAKDCHUBAIQEZAEGGFGIZHUHUDPAXCRBVEJAHH";
+                              export SOURCE_SID="ACCASTG";
+                              export SOURCE_THREADS="2";
+                              export SOURCE_HOST_NAME="wd0669";
+                              export SOURCE_RESET_LOG_ID="730582987";
+
+                              export REPLICAT_SCHEMA="gcca";
+                              export REPLICAT_PASSWORD="gcca";
+                              export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                   "mos_cc")
+export UNLOAD_DIR="/exp_share/ods/uat/unload/mos_cc";
+
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="Gg4t3";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAFARAOJQAMCFBWDDJYEQIXHMGRBBAACQISAJACFOCABRFCDMCHBJCCAYGEJUCWEMIKH";
+                              export SOURCE_SID="GGATE01_ORNCT";
+                              export SOURCE_THREADS="3";
+                              export DB_UNIQUE_NAME="ornct_ucx";
+
+                              export REPLICAT_SCHEMA="mos_cc";
+                              export REPLICAT_PASSWORD="mos_cc";
+                              export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                   "ngccr")
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="welcome2";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAIATBQFVAYBWALALGYFQFTCJEEFOIJAKDCHUBAIQEZAEGGFGIZHUHUDPAXCRBVEJAHH";
+                              export SOURCE_SID="GGATE01_CCRCT";
+export SOURCE_THREADS="3";
+                              export DB_UNIQUE_NAME="ccrct_ucx";
+
+                              export REPLICAT_SCHEMA="ngccr";
+                              export REPLICAT_PASSWORD="w0rk2d0";
+                              export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                   "portal")
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="ggatecc";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAHAVAZAWDUDTHWAMJXCRIJBAEEAOGGGDDKGGDRHVDYBEIZCDFCDCJVIBIGGSENGPFBH";
+                              export SOURCE_SID="GGATE01_PORCT";
+                              export SOURCE_THREADS="2";
+                              export DB_UNIQUE_NAME="porct_ucx";
+
+                              export REPLICAT_SCHEMA="portal";
+                              export REPLICAT_PASSWORD="portal";
+                              export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                   "sure")
+                              export SOURCE_SCHEMA="ggate";
+                              export SOURCE_PASSWORD="ggatecc";
+                              export SOURCE_PASSWORD_ENCRYPTED="AADAAAAAAAAAAAHAVAZAWDUDTHWAMJXCRIJBAEEAOGGGDDKGGDRHVDYBEIZCDFCDCJVIBIGGSENGPFBH";
+                              export SOURCE_SID="GGATE01_SURECT";
+                              export SOURCE_THREADS="3";
+                              export DB_UNIQUE_NAME="surect_ucx";
+
+                              export REPLICAT_SCHEMA="sure";
+                              export REPLICAT_PASSWORD="sure";
+                              export REPLICAT_SID="GGATE01_ODMCT";
+                              ;;
+                esac
+                ;;
+
+
+
