@@ -1,0 +1,125 @@
+HOST: 34.233.67.103
+id: Leo
+pass# Oracledocker@123
+
+#Dockerfile
+FROM nginx
+MAINTAINER Leodwin
+RUN apt-get update -y
+RUN apt-get install git -y
+#RUN apt-get update -y && apt-get install git -y
+WORKDIR /usr/share/nginx/html
+RUN git clone https://github.com/microsoft/project-html-website
+
+--------------------
+Dynamic docker image
+---------------------
+#leo.Dockerfile
+FROM centos
+ARG x=ftp
+# x available only during the build
+# it will be dynamic variable that you can replace during the build
+ENV c=hello
+# c is available inside the container
+RUN yum install $x -y
+
+docker build  -f leo.Dockerfile --build-arg x=telnet -t leonginx2:telnet .
+
+
+# building the image from github
+docker build -t leo:3app docker build -t leo:3app https://github.com/leodwin/docker.git
+
+# building the container with default app
+docker run -itd --name blackleo -p 1131:80 leo:3app
+docker run -itd --name greenleo -p 1141:80 -e color=green leo:3app
+docker run -itd --name greenleo -p 1141:80 -e color=green leo:3app
+
+#ashutoshhsingh youtube channel
+https://www.youtube.com/c/ashutoshhsingh
+
+
+
+---------------
+DOCKER Registery
+________________
+
+docker tag <imagename> <docker id>/<Image Name>
+
+
+docker tag leo:3app leodwin/leo:3app_v2
+docker push leodwin/leo:3app_v2
+docker tag leo:3app leodwin/eclipse:3app_v2
+docker push leodwin/eclipse:3app_v2
+
+docker pause  #used to pause a running container
+
+
+_______________________
+
+Docker Networking
+_______________________
+
+docker network ls
+docker inspect bridge
+
+***port forwarding***
+-p is used for port mapping ( default range that can be used 1026 - 60000)
+docker run -itd --name greenleo -p 1141:80 -e color=green leo:3app
+
+
+docker network create leobridge --subnet 173.19.0.0/24
+
+docker run -itd --name leobridgetest --net leobridge --ip 173.19.0.5 alpine ping fb.com
+
+docker exec -it leobridgetest ifconfig
+
+docker network rm $(docker network ls -q) # remove all network bridge
+
+
+________________
+
+DOCKER STORAGE
+________________
+
+docker volume create leostorage 
+
+docker volume ls
+
+docker volume inspect
+
+docker run -itd --name leostorage -v leovol:/mydata alpine sh
+
+two modes -- r/w and read -only
+
+docker run -itd --name leostorage2 -v leovol:/myapp:ro alpine sh #example for read only
+docker run -itd --name leostoragedb -v leovol:/myapp:rw alpine sh #example for read write without :rw by default its rw
+
+
+docker run -it --rm -v /home/leo/day2/pycode:/code python python /code/hello.py   # --rm will remove the container once job is stopped 
+
+# this is also an example to run a program with out building a image
+
+---------
+DOCKER DB
+---------
+
+docker run -itd --name leodb -e MYSQL_ROOT_PASSWORD=docker mysql
+
+docker logs leodb -f
+
+docker run -itd --name leodb2 -e MYSQL_ROOT_PASSWORD=docker -v /home/leo/day2/mydb/:/var/lib/mysql/ mysql
+
+
+---RESTART 
+
+docker run -itd --name leorestart --restart always alpine ping fb.com
+
+https://docs.docker.com/config/containers/start-containers-automatically/
+
+https://slashdevops.blogspot.com/2016/04/some-docker-basic-operation-operations.html
+
+
+
+
+
+

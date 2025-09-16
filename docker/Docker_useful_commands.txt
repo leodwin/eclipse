@@ -1,0 +1,43 @@
+
+sudo   yum   install   docker
+sudo   yum   install   docker
+sudo  systemctl  start  docker
+sudo  systemctl  status   docker
+
+BASIC COMMANDS
+
+sudo docker info
+docker search <any image,user namee>
+docker pull <image name>
+docker images
+docker ps
+docker ps -a
+
+Running a docker container
+--------------------------
+sudo docker run --name leoc1 -d alpine ping google.com
+
+--name          ---> giving name
+-d              ---> put to background
+alpine          ---> micro os (image)
+ping google.com ---> program
+
+docker stop <container name>
+docker kill <container name>
+docker rm <container name>  (once removed you cannot start it)
+
+docker kill $(docker ps -aq)
+
+docker run it --rm  nginx bash
+
+docker exec leo_c1 cal
+docker exec <CONT NAME> -it sh
+docker stats leo_c3
+
+docker build -t leo:py1 .
+
+docker run -it --name ok1 leo:py1 bash
+
+
+sudo docker build -f leodockerfile -t leo:webapp1 .
+

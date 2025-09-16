@@ -1,0 +1,98 @@
+<bigip-conf>
+	<application name="mos-analytics" env = "uat" type = "int-css">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>uat-mos-analytics.us.oracle.com_443</vs_name>
+		<rules>/MOS_Dev_Stage/mos-ana-12c</rules>
+	</application>
+	<application name="mos-analytics" env = "prod" type = "int-episp">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>mos-analytics.us.oracle.com_443</vs_name>
+		<rules>/Common/mos-ana-12c</rules>
+	</application>
+    <application name="mos-analytics" env = "psr" type = "int-css">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_PSR</partition>
+        <vs_name>lb-psr-mos-analytics_443</vs_name>
+		<rules>['/MOS_PSR/mos-ana-12c']</rules>
+	</application>
+    <application name="mos-analytics" env = "dr" type = "int-css">
+        <bigip_server>ucf-c1z4-lb1a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>ucfdr-mos-analytics.us.oracle.com_443</vs_name>
+		<rules>['/Common/mos-ana-12c']</rules>
+	</application>
+    <application name="rms" env = "uat" type = "int-css">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>rms-uat-adc_us_oracle_com_443</vs_name>
+		<rules>/MOS_Dev_Stage/rms-uat12c_iRule_v4,/Common/isnat_rule</rules>
+	</application>
+    <application name="rms" env = "prod" type = "int-css">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>rms_us_oracle_com_443</vs_name>
+		<rules>/Common/rms_irule_v4</rules>
+	</application>
+    <application name="mosep" env = "uat" type = "int-episp">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>uat-mosemp.us.oracle.com_443</vs_name>
+		<rules>/MOS_Dev_Stage/uat-mosemp_legacy_rewrite_rule_6.5.0.1,/Common/isnat_rule</rules>
+	</application>
+    <application name="mosep" env = "prod" type = "int-episp">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>mosemp.us.oracle.com_443</vs_name>
+		<rules>/Common/mosemp_legacy_rewrite_rule_6.5.0.1</rules>
+	</application>
+	<application name="isp" env = "uat" type = "int-episp">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>uat-support.us.oracle.com_443</vs_name>
+		<rules>/MOS_Dev_Stage/uat-moscp_legacy_rewrite_rule_17.3,/Common/isnat_rule</rules>
+	</application>
+    <application name="isp" env = "prod" type = "int-episp">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>vs_prod-support.us.oracle.com_443</vs_name>
+		<rules>/Common/support_us_legacy_rewrite_rule_6.5.0.1</rules>
+	</application>
+	<application name="callcenter-web" env = "uat" type = "int-css">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>vs_uat-callcenter_us_oracle_com_443</vs_name>
+		<rules>/Common/isnat_rule,/MOS_Dev_Stage/uat-callcenter_us_oracle_com_rule</rules>
+	</application>
+    <application name="callcenter-web" env = "prod" type = "int-css">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>vs_ml3-callcenter_us_oracle_com_443</vs_name>
+		<rules>/Common/ml3-callcenter_us_oracle_com_rule</rules>
+	</application>
+	<application name="wsm" env = "uat" type = "int-css">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>vs_uat_intwsm-profile_443</vs_name>
+		<rules></rules>
+	</application>
+	<application name="wsm" env = "prod" type = "int-css">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>vs_ml3_int_wsm_profile_443</vs_name>
+		<rules></rules>
+	</application>
+	<application name="inquira" env = "uat" type = "int-css">
+        <bigip_server>ucf-c1z4-lb15a.us.oracle.com</bigip_server>
+        <partition>MOS_Dev_Stage</partition>
+        <vs_name>uat-mos-km-inq-search.us.oracle.com_443</vs_name>
+		<rules></rules>
+	</application>
+    <application name="inquira" env = "prod" type = "int-css">
+        <bigip_server>adcq12z19-lb13a.us.oracle.com</bigip_server>
+        <partition>Common</partition>
+        <vs_name>mos-km-inq-search.us.oracle.com_443</vs_name>
+		<rules></rules>
+	</application>
+</bigip-conf>

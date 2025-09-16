@@ -1,0 +1,27 @@
+1009  wget  https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
+ 1010  ls
+ 1011  vim  recommended.yaml
+ 1012  kubectl create -f recommended.yaml
+ 1013  kubectl get  ns
+ 1014  kubectl  get  po  -n  kubernetes-dashboard
+ 1015  kubectl get  sa  -n  kubernetes-dashboard
+ 1016  kubectl get  secrets  -n kubernetes-dashboard
+ 1017  kubectl get  svc  -n kubernetes-dashboard
+ 1018  kubectl edit svc kubernetes-dashboard  -n kubernetes-dashboard
+ 1019  kubectl get  svc  -n kubernetes-dashboard
+ 1020  kubectl get  secrets  -n kubernetes-dashboard
+ 1021  kubectl describe  secrets kubernetes-dashboard-token-rzdq6  -n kubernetes-dashboard
+
+
+kubectl rollout restart deployment leoday5app2 -n leonamespace
+
+
+
+--- rolling deployment-----
+docker build -t leodwin/leo:appver3 .
+docker login
+docker push leodwin/leo:appver3
+kubectl rollout restart deployment leoday5app2 -n leonamespace
+
+
+https://github.com/redashu/k8s/  # documentation
