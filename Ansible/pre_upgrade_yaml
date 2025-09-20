@@ -1,0 +1,81 @@
+# cat pre_upgrade_dcac.yml
+- name: Pre upgrade dcac
+  hosts: "{{ env }}"
+  gather_facts: false
+  user: root
+  tasks:
+    - name: update proxy
+      ansible.builtin.shell: |
+        sed -i 's/dmz-proxy-adcq7.us.oracle.com/dmz-proxy-sjc.oraclecorp.com/g' /etc/yum.conf
+    - name: copy multiple items
+      copy:
+          src: "{{ item.src }}"
+          dest: "{{ item.dest }}"
+          force: yes
+      loop:
+          - src: 10-auth.conf_A
+            dest: /etc/systemd/system/olcne-agent.service.d/10-auth.conf
+          - src: proxy.conf
+            dest: /etc/systemd/system/crio.service.d/proxy.conf
+          - src: environment
+            dest: /etc/environment
+          - src: profile
+            dest: /etc/profile
+          - src: oracle-olcne-ol7.repo
+            dest: /etc/yum.repos.d
+      register: result
+    - debug:
+       var: result
+    - name: yum remove all olcne packages
+      yum:
+          name: olcne*
+          state: absent
+      register: result
+    - debug:
+       var: result
+    - name: Remove file (delete file)
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: absent
+      with_items:
+       - /etc/olcne
+       - /root/.olcne
+       - /var/olcne/
+       - /var/log/olcne
+       - /etc/yum.repo/oracle-olcne-ol7.repo
+      register: result
+    - debug:
+       var: result
+    - name: List olcne packages and register result to print with debug later
+      ansible.builtin.shell: rpm -qa |grep olcne
+      register: result
+    - debug:
+        var: result
+    - name: Container registary connectivitycheck
+      ansible.builtin.shell: |
+        systemctl daemon-reload
+        systemctl restart crio.service
+        crictl pull container-registry.oracle.com/olcne/nginx:1.17.7
+      register: result
+    - debug:
+       var: result
+    - name: Install the latest version of olcnectl
+      ansible.builtin.yum:
+       name: olcnectl
+       state: latest
+      register: result
+    - debug:
+       var: result
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /etc/olcne/certificates/
+        state: directory
+        owner: olcne
+        group: olcne
+        mode: '0755'
+    - name: Unconditionally reboot the machine with all defaults
+      ansible.builtin.reboot:
+      when: false
+      register: result
+    - debug:
+       var: result
