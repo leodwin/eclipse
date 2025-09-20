@@ -1,0 +1,26 @@
+- name: Copy file from local to remote machine
+  hosts: "{{ env }}"
+  gather_facts: false
+  user: root
+  tasks:
+    - name: Find files to delete
+      ansible.builtin.find:
+        paths: /etc/yum.repos.d
+        file_type: file
+      register: files_to_delete
+    - name: Remove found files
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: absent
+      loop: "{{ files_to_delete.files }}"
+      register: result
+    - debug:
+       var: result
+    - name: Copy file to remote_machine
+      ansible.builtin.synchronize:
+        src: yum1.8/yum.repos.d
+        dest: /etc/
+        recursive: yes
+      register: result
+    - debug:
+       var: result
