@@ -1,0 +1,28 @@
+Windows servers
+
+GCWAP: abimv9007/abimv9001
+GCWAU: ubimv9017
+GCWBU: ubimv9017
+GCWAD: ubimv9018
+GCWAV: ubimv9020
+GCWBD: ubimv9056
+
+UBIMV4202:gcwav_a> (:) /scripts_repo/esps-central-scripts/common/psafe_client
+$ ./api_showpassword.sh pe-app-gcwav gcwadmin_a
+Ora23adwv
+
+$ getpwd -e gcwad_a| grep gcwadmin
+gcwadmin_a w2BUmu3u
+---------------------
+$ getpwd -e gcwav_a | grep gcwadmin
+gcwadmin_a Ora23adwv
+---------------------
+$ getpwd -e gcwau_a | grep gcwadmin
+gcwadmin_a n8PuStec
+---------------------
+$  getpwd -e gcwbd_a | grep gcwadmin
+gcwadmin_a phefukE6
+---------------------
+$ getpwd -e gcwap_a| grep gcwadmin
+gcwadmin_a Sav5cuvu
+supervisor:pltfmdi_odi_repo GcwaP0di12

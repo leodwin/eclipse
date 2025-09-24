@@ -1,0 +1,4 @@
+Test/Devops Machine name - https://uno.oraclecorp.com/uno/
+
+slc11yko.us.oracle.com -- 16GB
+slc13ktk.us.oracle.com -- 8GB

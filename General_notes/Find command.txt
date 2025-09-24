@@ -1,0 +1,27 @@
+Find command
+
+pbrun bea-patch-adm -u oracle
+
+find / -name tnsnames.ora 2>/dev/null
+
+find /home/ftp -name 'B*'
+
+
+
+find . -name "*" -exec grep -ils  umems431.us.oracle.com {} \; (Returns the path exclude directory)
+
+find `pwd` -xdev -type f -size +10000000c -exec ls -lha {} \; | sort -k5nr
+
+
+biggest file in a directory
+find -type f -exec du -Sh {} + | sort -rh | head -n 5
+
+du -sh ./*/
+
+Process usage
+ps -e -o vsz=Kbytes -o pid,args=Command-Line|sort -rnk1| awk '{ print $2"   ",$1/1024"MB""   " ,$3 "    "}' | head -10
+
+#get the location of env files loaded from
+PS4='+$BASH_SOURCE> ' BASH_XTRACEFD=7 bash -xl 7>&2
+
+

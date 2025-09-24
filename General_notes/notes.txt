@@ -1,0 +1,6 @@
+passwords
+
+UBIMV4203
+cd /scripts_repo/esps-central-scripts/common/psafe_client/
+./api_showpassword.sh pe-app-gcwad weblogic:erobia
+Erp0B1a$

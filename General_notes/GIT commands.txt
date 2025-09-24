@@ -1,0 +1,19 @@
+GIT commands
+
+git branch -- list your branches
+git branch -d <aaaaaa> -- delete a branch
+git checkout llivero_EAW-643  -- switch branch
+git remote show origin
+
+git add <file name>
+git commit
+git status
+git push origin <branch>
+
+git pull origin <branch>
+
+
+TO DELETE
+
+git branch -D llivero_branch
+git push origin --delete llivero_branch

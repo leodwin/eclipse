@@ -1,0 +1,6 @@
+Sharing a vncsession
+
+/home/sskwong/.vnc/config.d
+_Edition=Enterprise
+EnableAutoUpdateChecks=0
+Permissions=dbhagia:d,llivero:d,:f

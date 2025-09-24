@@ -1,0 +1,5 @@
+Deployment folders
+
+/home/siebel/svn/Common/Kit_Deployment/cfg/root.cfg
+
+/home/siebel/bin

@@ -1,0 +1,8 @@
+jenkins start /stop
+
+AINGV0007:eo-css-dw-jenkins> (:) cd /u05/jenkins/instances/eo-css-dw-jenkins/scripts
+$ ./jenkins_manage_use_sync.sh start
+
+$ ps -ef | grep eo-css-dw-jenkins
+root      6295 13968  0 23:31 pts/9    00:00:00 su - eo-css-dw-jenkins
+59796     6478     1 99 23:32 pts/9    00:00:36 /u05/jenkins/instances/common/jdk1.8.0_191/bin/java -Xms4096m -Xmx4096m -Xss1m -XX:ReservedCodeCacheSize=512m -Djava.io.tmpdir=/u05/jenkins/instances/eo-css-dw-jenkins/jenkins_tmp -jar /u05/jenkins/instances/eo-css-dw-jenkins/app/jenkins2.140/jenkins.war --httpPort=8444
