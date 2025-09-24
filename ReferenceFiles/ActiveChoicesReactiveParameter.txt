@@ -1,0 +1,49 @@
+
+//First part active choise parameter
+return ['--Select--','MOSCP','MOSEP','MOSnSP','ISP','MOS_ANALYTICS','MOSLITE_EXT','MOSLITE_INT','MOSSP']
+
+Fallback Script
+return ['error']
+
+
+// This is last part of the choise paramater
+if (APPLICATION.equals('--Select--'))
+{
+   return ['Select Application']
+}
+else if (APPLICATION.equals('MOSCP'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('MOSEP'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('MOSnSP'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('ISP'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('MOS_ANALYTICS'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('ASR'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('MOSLITE_EXT'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('MOSLITE_INT'))
+{
+  return ['FULL_TT']
+}
+else if (APPLICATION.equals('MOSSP'))
+{
+  return ['FULL_TT']
+}
