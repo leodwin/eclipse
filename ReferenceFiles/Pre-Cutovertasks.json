@@ -1,0 +1,7 @@
+{"channel":"%CHANNEL%",
+"icon_emoji":"ghost",
+"text":"\n\n*MOS Analytics %ENV% Pre-Cutovertasks.*\n 1. Rsync completed for obiee local mounts\n 2. MOS & ODI is disabled in %ENV%.\n 3. EMCC metric extension disabled for ETL\n",
+"attachments":[{"fallback":"Check CR at https://occn-jira.oraclecorp.com/browse/EAS-39190",
+"actions":[{"type":"button","text":"Contact MOS Analytics SMEs",
+"url":"https://pdit-document-repository.oraclecorp.com/display/CSS/Data+Warehouse+Services#DataWarehouseServices-DataWarehousingServicesSMEs",
+"style":"primary"}]}]}

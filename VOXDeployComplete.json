@@ -1,1 +1,0 @@
-{"channel":"%CHANNEL%","text":"\n\nVOXDASH %ENV% Application Deloyment Status.\n\n *Deployment Completed.* \n","attachments":[{"fallback":"Check SME list below ","actions":[{"type":"button","text":"Contact VOXDASH SMEs","url":"https://pdit-document-repository.oraclecorp.com/display/ESIP/ESPS+Environment+Contacts","style":"primary"}]}]}

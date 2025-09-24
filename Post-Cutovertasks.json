@@ -1,7 +1,0 @@
-{"channel":"%CHANNEL%",
-"icon_emoji":"ghost",
-"text":"\n\n*MOS Analytics %ENV% Post-Cutovertasks.*\n\n MOS&ODI is enabled in %ENV%.\n\nEMCC metric extension enabled for ETL\n",
-"attachments":[{"fallback":"Check CR at https://occn-jira.oraclecorp.com/browse/EAS-39190",
-"actions":[{"type":"button","text":"Contact MOS Analytics SMEs",
-"url":"https://pdit-document-repository.oraclecorp.com/display/CSS/Data+Warehouse+Services#DataWarehouseServices-DataWarehousingServicesSMEs",
-"style":"primary"}]}]}

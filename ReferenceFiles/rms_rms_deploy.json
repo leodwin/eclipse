@@ -1,0 +1,7 @@
+{"channel":"%CHANNEL%",
+"icon_emoji":"ghost",
+"text":"\n\n*RMS PROD: RMS Deployment completed*\n ",
+"attachments":[{"fallback":"Check CR at https://occn-jira.oraclecorp.com/browse/EAS-39190",
+"actions":[{"type":"button","text":"CR Link","url":"https://jira.oraclecorp.com/jira/browse/%CR%","style":"danger"},{"type":"button","text":"Contact RMS SMEs",
+"url":"https://pdit-document-repository.oraclecorp.com/display/EKBA/Reporting+Management+System+-+RMS",
+"style":"primary"}]}]}

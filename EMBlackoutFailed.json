@@ -1,1 +1,0 @@
-{"channel":"%CHANNEL%","text":"\n\nMOS Analytics EM Blackout %ENV% Status.\n\n *EM Blackout Failed. Please contact SMEs.* \n","attachments":[{"fallback":"Check for SME list","actions":[{"type":"button","text":"Contact ee-app-aqua","url":"https://dyn.slack.com/archives/CGPT9TWBY","style":"primary"}]}]}
